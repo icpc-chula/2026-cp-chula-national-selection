@@ -16,7 +16,8 @@ jobs:
             texlive-xetex \
             texlive-latex-extra \
             texlive-fonts-extra \
-            texlive-pictures
+            texlive-pictures \
+            texlive-plain-generic
 
       - name: Install fonts
         run: |
