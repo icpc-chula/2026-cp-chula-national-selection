@@ -1,0 +1,120 @@
+% Problem style template (English Only)
+% Original: https://github.com/programming-in-th/statements/blob/master/templates/style.sty
+% Edited by Borworntat D.
+
+\usepackage{polyglossia}
+\usepackage{fontspec}
+\usepackage[includeheadfoot, a4paper, total={7in, 10in}, top=0.5cm]{geometry} 
+\usepackage{listings}
+\usepackage{helvet}
+\lstset{basicstyle=\ttfamily}
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{fancyvrb}
+\usepackage{verbatim}
+\usepackage{longfbox}
+\usepackage{setspace}
+\raggedright
+\fontsize{16}{14}\selectfont
+\setlength{\parskip}{5pt}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{xcolor,colortbl}
+\usepackage{tikz}
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{\setstretch{0.1}}
+\titlespacing{\section}{0pt}{0pt}{0pt}
+
+\IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\setmainfont{TeX Gyre Termes}}
+\IfFontExistsTF{Helvetica}{\setsansfont{Helvetica}}{\setsansfont{TeX Gyre Heros}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\chead{\includegraphics[width=2cm]{./assets/cp-logo.jpg}}
+
+\rfoot{
+  \hrule
+  \vspace{2mm}
+  CPCU ICPC Team Selection Contest \hfill \thepage
+}
+
+\renewcommand{\headrulewidth}{1pt}
+
+\setlength{\headheight}{60pt}
+
+\setdefaultlanguage{english}
+
+\newfontfamily\englishfonttt[
+  Path=./templates/,
+  Scale=1.2,
+  BoldFont={Inconsolata-Bold.ttf}
+]{Inconsolata-Regular.ttf}
+
+\newenvironment{problem}[3]
+{
+  \begin{center}
+  \noindent
+  \sffamily
+  \huge Problem {#1} \\
+  \huge #2
+
+  {\Large Time Limit: #3} \\
+  \noindent
+  \end{center}
+}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=magenta,      
+  urlcolor=blue
+}
+
+\newcommand{\InputFile}{\section*{\sffamily Input}}
+\newcommand{\OutputFile}{\section*{\sffamily Output}}
+\newcommand{\Examples}{\section*{Sample Input and Output}}
+\newcommand{\InputFileName}{Sample Input}
+\newcommand{\OutputFileName}{Sample Output}
+\newcommand{\Note}{\section*{Note}}
+\newcommand{\Source}{\section*{Source}}
+\newcommand{\Explaination}[1]{\textit{\Large #1}}
+
+\newlength{\thelinewidth}
+\thelinewidth=\textwidth
+\newlength{\exmpwidinf}
+\newlength{\exmpwidouf}
+\newlength{\exmpwidewid}
+\exmpwidinf=0.5\thelinewidth
+\exmpwidouf=0.5\thelinewidth
+\exmpwidewid=0.9\thelinewidth
+
+\addto@hook{\every@verbatim}{\topsep=0pt\relax}
+
+\newenvironment{example}[1][]{
+  \ttfamily\obeylines\obeyspaces\frenchspacing
+  \newcommand{\exmp}[3]{
+    \setlength{\tabcolsep}{6pt}
+    \renewcommand{\arraystretch}{1.5}
+    \noindent
+    \begin{tabular}{|l|l|}
+    \multicolumn{1}{l}{\sffamily \textbf{\InputFileName~\###1}}&
+    \multicolumn{1}{l}{\sffamily \textbf{\OutputFileName~\###1}}\\
+    \hline
+    \begin{minipage}[t]{\exmpwidinf}\rightskip=0pt plus 1fill\relax##2\rule[0pt]{0pt}{0pt}\end{minipage}&
+    \begin{minipage}[t]{\exmpwidouf}\rightskip=0pt plus 1fill\relax##3\rule[0pt]{0pt}{0pt}\end{minipage}\\
+    \hline
+    \end{tabular}
+    \renewcommand{\arraystretch}{1}
+  }
+}{
+}
+
+\newcommand{\iobox}[1]{%
+  \fbox{\parbox[t]{0.6\textwidth}{\raggedright\ttfamily #1\strut}}%
+}
