@@ -1,0 +1,50 @@
+\begin{problem}{I}{Irritating Transfer}{X seconds}
+
+\noindent
+In 2126, quantum servers is now an internet backbone. 
+The network consists of $n$ quantum servers, numbered from $1$ to $n$.
+There are $m$ bidirectional quantum channels connecting pairs of servers.
+Each channel $i$ connects servers $u_i$ and $v_i$, and has a base transmission latency of $w_i$ milliseconds.
+
+\noindent
+Data packets in this network are encoded using very special quantum encoding, denoted as a positive integer $K$. 
+The network has a very unique constraint: a packet with encoding $K$ can only be transmitted through a channel $i$ if and only if the encoding $K$ is \textbf{coprime} to the base latency $w_i$ milliseconds of that channel.
+That is, $\gcd(K, w_{i}) = 1$.
+
+\noindent
+When a packet is completely transmitted, its encoding will be shifted by exactly the latency of the channel it was transmitted through.
+Formally, if a packet with encoding $K$ is transmitted through channel $i$, the resulting encoding of the packet will be $K + w_i$.
+
+\noindent
+If a packet arrives at a server and its encoding $K$ is not coprime to the base latency of any channel connected to that server, it cannot be transmitted immediately. 
+In this case, the packet can be hold at the server to perform a \textbf{re-encoding} operation, which changes the encoding of the packet from $K$ to $K + 1$ while consuming $1$ millisecond of time.
+
+\noindent
+If the packet starts at server $1$ with encoding $K$ at time $0$. Find the minimum total time (in milliseconds) required for the packet to reach server $n$.
+
+
+\InputFile
+
+\noindent
+First line of input contains three integers $n$, $m$, and $K$ ($2 \le n \le 10^5$, $1 \le m \le 2 \times 10^5$, $1 \le K \le 10^9$).\\
+The next $m$ lines each contain three integers $u_i$, $v_i$, and $w_i$ ($1 \le u_i, v_i \le n$, $u_i \neq v_i$, $1 \le w_i \le 10^9$), describing the quantum channels. 
+
+\OutputFile
+
+Output a single integer, the minimum total time (in milliseconds) required for the packet to reach server $n$. If it is impossible for the packet to reach server $n$, output \texttt{-1}.
+
+\Examples
+
+\begin{example}
+\exmp{1}{
+4 4 3
+1 2 2
+2 3 3
+3 4 4
+1 4 5
+}{
+  5
+}
+\end{example}
+
+\end{problem}
