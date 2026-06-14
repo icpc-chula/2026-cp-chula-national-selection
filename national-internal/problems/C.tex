@@ -1,0 +1,36 @@
+\begin{problem}{C}{Range Invert}{X seconds}
+
+\noindent
+You are given two bitstrings $A$ and $B$ of length $n$. 
+You want to transform $A$ into $B$ by performing a series of operations. 
+In one operation, you can choose a contiguous segment of the bitstring and invert all bits in that segment (change \fonttt{0} to \fonttt{1} and \fonttt{1} to \fonttt{0}).
+
+\InputFile
+
+\noindent
+The first line of input contains an integer $n$ ($1 \le n \le 10^6$).\\
+The second line contains the bitstring $A$ ($|A| = n$).\\
+The third line contains the bitstring $B$ ($|B| = n$). 
+
+\OutputFile
+
+\noindent
+Output the minimum number of operations required to transform $A$ into $B$.
+
+\Examples
+
+\begin{example}
+\exmp{1}{5
+11010
+00101
+}{2
+}
+\exmp{2}{4
+1010
+0101
+}{1
+}
+
+\pagebreak
+
+\end{problem}
