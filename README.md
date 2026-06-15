@@ -4,12 +4,12 @@
 
 | Alias | Problem             | Expected Difficulty | Core Idea                            | Author                   |
 | ----- | ------------------- | ------------------- | ------------------------------------ | ------------------------ |
-| A     |
+| A     | Allocation          | Medium              | Data Structures                      | Borworntat Dendumrongkul |
 | B     | Breaking the Glass  | Easy                | Disjoint Set Union                   | Borworntat Dendumrongkul |
 | C     | Controvert Strings  | Easy                | Greedy                               | Attitarn Buathep         |
-| D     |
-| E     |
+| D     |                     | Hard                |
+| E     |                     | Medium              |                                      |
 | F     | Fixing Table        | Medium              | Dynamic Programming, Data Structures | Attitarn Buathep         |
-| G     |
-| H     |
+| G     |                     | Easy                |                                      |                          |
+| H     |                     | Hard                |
 | I     | Irritating Transfer | Medium              | Graph, Number Theory                 | Borworntat Dendumrongkul |
