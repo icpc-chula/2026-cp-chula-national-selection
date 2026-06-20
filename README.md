@@ -4,7 +4,7 @@
 
 | Alias | Problem             | Expected Difficulty | Core Idea                            | Author                   |
 | ----- | ------------------- | ------------------- | ------------------------------------ | ------------------------ |
-| A     | Allocation          | Medium              | Data Structures                      | Borworntat Dendumrongkul |
+| A     | AAAAAAAAAA          | Medium              | Tree, Binary Search                  | Pasin Pornsiwakul        |
 | B     | Breaking the Glass  | Easy                | Disjoint Set Union                   | Borworntat Dendumrongkul |
 | C     | Controvert Strings  | Easy                | Greedy                               | Attitarn Buathep         |
 | D     |                     | Hard                |
