@@ -8,8 +8,8 @@
 | B     | Breaking the Glass  | Easy                | Disjoint Set Union                   | Borworntat Dendumrongkul |
 | C     | Controvert Strings  | Easy                | Greedy                               | Attitarn Buathep         |
 | D     |                     | Hard                |
-| E     |                     | Medium              |                                      |
+| E     | Expected Tree       | Math, Tree          | Medium                               | Pasin Pornsiwakul        |
 | F     | Fixing Table        | Medium              | Dynamic Programming, Data Structures | Attitarn Buathep         |
 | G     |                     | Easy                |                                      |                          |
-| H     |                     | Hard                |
+| H     |                     | Medium              |
 | I     | Irritating Transfer | Medium              | Graph, Number Theory                 | Borworntat Dendumrongkul |

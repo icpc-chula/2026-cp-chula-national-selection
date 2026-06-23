@@ -38,6 +38,12 @@ jobs:
               bash compile.sh "${dir#./}/entry.tex"
             done
 
+      - name: Compile individual problems
+        run: |
+          find national-internal/problems -name "*.tex" | sort | while read tex; do
+            bash compile-problem.sh "$tex" "national-internal/problems"
+          done
+
       - name: Set release date
         run: echo "DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 
@@ -46,4 +52,6 @@ jobs:
         with:
           tag_name: pdf-${{ env.DATE }}-${{ github.run_number }}
           name: "Contest PDFs (${{ env.DATE }})"
-          files: "**/entry.pdf"
+          files: |
+            **/entry.pdf
+            national-internal/problems/*.pdf
