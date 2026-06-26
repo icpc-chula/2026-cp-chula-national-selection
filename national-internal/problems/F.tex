@@ -4,7 +4,7 @@
 You are given two tables $A$ and $B$ of size $2 \times n$. 
 There are $T$ queries:
 \begin{itemize}
-  \item \texttt{1 r x y}: Invert all bits in row $r$ and columns from $x$ to $y$ (inclusive) of table $A$. Here, $r$ is either \fonttt{0} or \fonttt{1}, and $1 \le x \le y \le n$.
+  \item \texttt{1 p q x y}: Invert all bits from rectangle with row from $p$ to $q$ and columns from $x$ to $y$ (inclusive) of table $A$. Here, $1 \le p \le q \le 2$, and $1 \le x \le y \le n$.
   \item \texttt{2}: Output the minimum number of operations required to transform table $A$ into table $B$ using the following operation:
     \begin{itemize}
       \item choose a subtable of $A$ and invert all bits in that subtable (change \fonttt{0} to \fonttt{1} and \fonttt{1} to \fonttt{0}).
