@@ -1,25 +1,25 @@
 \begin{problem}{B}{Breaking the Glass}{X seconds}
 
 \noindent
-There is a table with $n$ rows and $m$ columns.
-Each cell of the table contains a diagonal piece of glass in the shape of \verb|\| or \verb|/|, which splits that cell into two triangular halves.
+Doraemon's 4D pocket has a built-in security grid with $n$ rows and $m$ columns.
+Each cell of the grid contains a diagonal piece of glass in the shape of \verb|\| or \verb|/|, which splits that cell into two triangular halves.
 
 \noindent
-These diagonal pieces divide the interior of the table into one or more \textbf{regions}.
+These diagonal glass pieces divide the interior of the pocket into one or more \textbf{regions}.
 A region is a maximal connected open area: informally, any two points in the same region can be joined by a path that does not cross any glass.
-Note that the borders of the table are \textbf{not} glass, so regions may extend to the edge of the table.
-The space outside the table is not counted as a region.
+Note that the borders of the pocket are \textbf{not} glass, so regions may extend to the edge of the pocket.
+The space outside the pocket is not counted as a region.
 
 \noindent
-You want to merge all regions into a single connected region.
-In one operation, you can break the glass in one cell, removing its diagonal piece entirely.
+To retrieve a gadget buried deep inside, Doraemon needs to merge all regions into a single connected region.
+In one operation, he can break the glass in one cell, removing its diagonal piece entirely.
 Determine the minimum number of operations required.
 
 \InputFile
 
 \noindent
 First line of input contains two integers $n$ and $m$ ($1 \le n \times m \le 10^6$).\\
-The next $n$ lines each contain a string of length $m$ consisting of characters \verb|\| and \verb|/|, representing the table.
+The next $n$ lines each contain a string of length $m$ consisting of characters \verb|\| and \verb|/|, representing the pocket's grid.
 
 \OutputFile
 
