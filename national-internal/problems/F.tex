@@ -5,8 +5,8 @@ Doraemon has a special 2-floor refrigerator with $n$ compartments on each floor 
 
 However, Nobita keeps playing with the settings! There are $T$ events that can occur, given as queries:
 \begin{itemize}
-  \item \texttt{1 p q x y}: Nobita uses a gadget to invert the storage modes in a rectangular block of compartments from floor $p$ to $q$ and columns $x$ to $y$ (inclusive) in the current refrigerator state $A$. Here, $1 \le p \le q \le 2$, and $1 \le x \le y \le n$.
-  \item \texttt{2 p q x y}: Doraemon checks the refrigerator and wants to know: what is the minimum number of operations required to transform the current state $A$ into his perfect target state $B$ from floor $p$ to $q$ and columns $x$ to $y$ (inclusive)? In a single operation, Doraemon can use his ``Rectangle Flipper'' gadget to choose any subrectangle of compartments in $A$ and invert all their modes (change \texttt{0} to \texttt{1} and \texttt{1} to \texttt{0}).
+  \item \texttt{1 p q x y}: Nobita uses a gadget to invert the storage modes in a rectangular block of compartments from floor $p$ to $q$ and compartment $x$ to $y$ (inclusive) in the current refrigerator state $A$. Here, $1 \le p \le q \le 2$, and $1 \le x \le y \le n$.
+  \item \texttt{2 p q x y}: Doraemon checks the refrigerator and wants to know: what is the minimum number of operations required to transform the current state $A$ into his perfect target state $B$ from floor $p$ to $q$ and compartment $x$ to $y$ (inclusive)? In a single operation, Doraemon can use his ``Rectangle Flipper'' gadget to choose any subrectangle of compartments in $A$ and invert all their modes (change \texttt{0} to \texttt{1} and \texttt{1} to \texttt{0}).
 \end{itemize}
 
 \noindent
@@ -26,7 +26,7 @@ The next $T$ lines contain the queries in the format described above (\texttt{1 
 \OutputFile
 
 \noindent
-For each query of type \texttt{2}, output a single integer: the minimum number of operations Doraemon needs to transform the refrigerator's current state $A$ into the target state $B$ from floor $p$ to $q$ and columns $x$ to $y$.
+For each query of type \texttt{2}, output a single integer: the minimum number of operations Doraemon needs to transform the refrigerator's current state $A$ into the target state $B$ from floor $p$ to $q$ and compartment $x$ to $y$.
 
 \Examples
 
