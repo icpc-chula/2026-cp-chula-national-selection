@@ -1,7 +1,7 @@
 \begin{problem}{H}{Harvest}{2 seconds}
 
 \noindent
-The annual Harvest Festival is approaching, and you control an autonomous Harvesting Drone that tends to a single row of $N$ fields, numbered from $1$ to $N$ from left to right. Field $i$ currently requires $v_i$ units of fuel to harvest; whenever the drone lands on a field, it must harvest it, consuming that many units of fuel.
+The annual Harvest Festival is approaching, and Doraemon pulls an autonomous Harvesting Drone out of his 4D pocket to tend to a single row of $N$ fields, numbered from $1$ to $N$ from left to right. Field $i$ currently requires $v_i$ units of fuel to harvest; whenever the drone lands on a field, it must harvest it, consuming that many units of fuel.
 
 The drone always moves strictly to the right using one of its three thrusters:
 \begin{itemize}
@@ -11,7 +11,7 @@ The drone always moves strictly to the right using one of its three thrusters:
 \end{itemize}
 To avoid overheating, the drone's control unit refuses to fire the same thruster twice in a row --- consecutive hops must use different lengths.
 
-You must process $Q$ events of the following two types:
+Doraemon must process $Q$ events of the following two types:
 \begin{itemize}
   \item \texttt{1 l r}: Report the minimum total fuel the drone needs to travel from field $l$ to field $r$, obeying the movement rules above. The total includes the harvesting cost of field $l$, field $r$, and every field the drone lands on in between.
   \item \texttt{2 a b}: A replanting crew changes the harvesting cost of field $a$ to $b$.
@@ -20,23 +20,14 @@ You must process $Q$ events of the following two types:
 \InputFile
 
 \noindent
-The first line contains two integers $N$ and $Q$.\\
-The second line contains $N$ space-separated integers $v_1, v_2, \ldots, v_N$ --- the initial harvesting cost of each field.\\
-Each of the next $Q$ lines contains one event in one of the two formats described above.
+The first line contains two integers $N$ and $Q$ ($2 \le N, Q \le 10^5$).\\
+The second line contains $N$ space-separated integers $v_1, v_2, \ldots, v_N$ ($1 \le v_i \le 10^9$) --- the initial harvesting cost of each field.\\
+Each of the next $Q$ lines contains one event in one of the two formats described above, where $1 \le l \le r \le N$, $1 \le a \le N$, and $1 \le b \le 10^9$.
 
 \OutputFile
 
 \noindent
 For each event of type \texttt{1}, print a single integer on its own line: the minimum total fuel required to travel from field $l$ to field $r$.
-
-\section*{\sffamily{Constraints}}
-
-\begin{itemize}
-  \item $2 \le N, Q \le 10^5$
-  \item $1 \le v_i, b \le 10^9$
-  \item $1 \le l \le r \le N$
-  \item $1 \le a \le N$
-\end{itemize}
 
 \Examples
 
@@ -50,7 +41,9 @@ For each event of type \texttt{1}, print a single integer on its own line: the m
 }{13
 16
 }
-\Explaination{Initially the drone can travel from field $1$ to field $6$ using a long hop then a medium hop (landing on fields $1, 4, 6$), harvesting $3+1+9=13$ fuel, which is optimal. After the update, field $4$'s cost becomes $10$, so the cheapest route switches to a medium hop then a long hop (landing on fields $1, 3, 6$), harvesting $3+4+9=16$ fuel.}
 \end{example}
+\Explaination{\upshape\normalsize Initially the drone can travel from field $1$ to field $6$ using a long hop then a medium hop (landing on fields $1, 4, 6$), harvesting $3+1+9=13$ fuel, which is optimal. After the update, field $4$'s cost becomes $10$, so the cheapest route switches to a medium hop then a long hop (landing on fields $1, 3, 6$), harvesting $3+4+9=16$ fuel.}
+
+\pagebreak
 
 \end{problem}
