@@ -31,7 +31,6 @@ Print a single integer: the minimum number of \texttt{Disrupt} days required to 
 }{1
 }
 \end{example}
-\Explaination{One optimal strategy is \texttt{Gather}, \texttt{Gather}, \texttt{Disrupt}, \texttt{Gather}, \texttt{Gather}, disrupting only on day $3$. The table below shows the beast's energy at the end of each day, which always stays strictly below $N=12$.}
 
 \begin{center}
 \begin{tabular}{|c|c|c|}
@@ -47,7 +46,7 @@ Print a single integer: the minimum number of \texttt{Disrupt} days required to 
 \end{tabular}
 \end{center}
 
-\Explaination{If the beast is never disrupted, its energy reaches $1\times2+2\times2+3\times2=12$ by the end of day $3$, which is not strictly less than $N=12$. So at least one disruption is required, and one is also sufficient.}
+\Explaination{\upshape\normalsize If the beast is never disrupted, its energy reaches $1\times2+2\times2+3\times2=12$ by the end of day $3$, which is not strictly less than $N=12$. So at least one disruption is required, and one is also sufficient.}
 
 \begin{example}
 \exmp{2}{
@@ -55,8 +54,6 @@ Print a single integer: the minimum number of \texttt{Disrupt} days required to 
 }{0
 }
 \end{example}
-\Explaination{With $K=1$, the beast can only gather once, so the energy becomes $1$, which is already below $100$. No disruption is needed.}
-
-\pagebreak
+\Explaination{\upshape\normalsize With $K=1$, the beast can only gather once, so the energy becomes $1$, which is already below $100$. No disruption is needed.}
 
 \end{problem}
