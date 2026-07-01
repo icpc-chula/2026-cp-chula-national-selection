@@ -1,0 +1,53 @@
+\begin{problem}{D}{Doraemon}{1 second}
+
+\noindent
+Tomorrow is the school Science Fair, and Nobita has been assigned to present a project that's supposed to impress everyone.
+So Doraemon has to help him out by pulling $n$ gadgets, numbered from $1$ to $n$, out of his pocket.
+
+\noindent
+Each gadget $i$ has $c_i$ ports on its casing. 
+Doraemon also carries a bundle of connecting cords. 
+A single cord can be plugged between one free port of gadget $u$ and one free port of gadget $v$ (with $u \neq v$). 
+Once a cord is connected, the two gadgets run in tandem and put on a combined display worth $w$ points of wow factor. 
+Doraemon has a list of $m$ cords he could use; cord $j$ is described by the two gadgets it would join and the wow factor $w_j$ it would produce. 
+He may plug in any subset of these cords, and he may even run several cords between the same pair of gadgets, as long as each port is used by at most one cord.
+
+\noindent
+Not every port needs a cord. 
+Any port left \textbf{free} simply lets its gadget perform on its own, and a free port on gadget $i$ produces $b_i$ points of wow factor by itself.
+
+\noindent
+Doraemon wants the Science Fair to be unforgettable.
+Help him choose which cords to plug in so that the total wow factor is maximized, and output that maximum.
+
+\InputFile
+
+\noindent
+The first line of input contains two integers $n$ and $m$ ($1 \le n \le 500$ and
+$0 \le m \le 100\,000$).\\
+The second line contains $n$ integers $c_1, c_2, \ldots, c_n$ ($1 \le c_i$ and
+$\sum_{i=1}^{n} c_i \le 500$).\\
+The third line contains $n$ integers $b_1, b_2, \ldots, b_n$ ($1 \le b_i \le 10^9$).\\
+Each of the next $m$ lines contains three integers $u_j$, $v_j$, and $w_j$
+($1 \le u_j, v_j \le n$, $u_j \neq v_j$, $1 \le w_j \le 10^9$).
+
+\noindent
+Note that several cords may join the same pair of gadgets.
+
+\OutputFile
+
+\noindent
+Output a single integer: the maximum total wow factor achievable.
+
+\begin{example}
+\exmp{1}{3 3
+2 2 2
+5 5 5
+1 2 100
+2 3 100
+1 3 100
+}{300
+}
+\end{example}
+
+\end{problem}

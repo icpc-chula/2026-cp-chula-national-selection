@@ -7,9 +7,9 @@
 | A     | AAAAAAAAAA          | Medium              | Tree, Binary Search                  | Pasin Pornsiwakul        |
 | B     | Breaking the Glass  | Easy                | Disjoint Set Union                   | Borworntat Dendumrongkul |
 | C     | Controvert Strings  | Easy                | Greedy                               | Attitarn Buathep         |
-| D     |                     | Hard                |
+| D     | Doraemon            | Hard                | Graph, Matching, Flows, Greedy       | Borworntat Dendumrongkul |
 | E     | Expected Tree       | Medium              | Math, Tree                           | Pasin Pornsiwakul        |
 | F     | Fixing Table        | Medium              | Dynamic Programming, Data Structures | Attitarn Buathep         |
-| G     | Gathering           | Easy                | Dynamic Programming                                     | Paponthanai Ounsopa                         |
+| G     | Gathering           | Easy                | Dynamic Programming                  | Paponthanai Ounsopa      |
 | H     |                     | Medium              |
 | I     | Irritating Transfer | Medium              | Graph, Number Theory                 | Borworntat Dendumrongkul |
