@@ -1,21 +1,58 @@
-\begin{problem}{C}{Controvert String}{X seconds}
+\begin{problem}{C}{Catastrophic Canine Conversion}{X seconds}
 
 \noindent
-You are given two bitstrings $A$ and $B$ of length $n$. 
-You want to transform $A$ into $B$ by performing a series of operations. 
-In one operation, you can choose a contiguous segment of the bitstring and invert all bits in that segment (change \fonttt{0} to \fonttt{1} and \fonttt{1} to \fonttt{0}).
+Nobita stumbles through the front door, knees scraped and eyes brimming with tears.
+``Doraemon! The dogs from the vacant lot chased me again --- I had to climb the telephone pole and the nice calico cat I've been feeding ran away when the barking started!''
+
+\noindent
+Doraemon freezes mid-dorayaki. Despite being a cat-type robot, he harbours a deep, paralyzing terror of dogs --- the mere sound of barking makes his circuits buzz with static and his round body tremble uncontrollably.
+The irony of a cat robot fearing dogs is not lost on him, but phobias transcend logic.
+Still, Nobita's despair tugs at his empathy circuits. Summoning every ounce of courage (and finishing his dorayaki for fortification), Doraemon plunges his arm into his 4-Dimensional Pocket and, after rummaging past a Take-copter, a Small Light, and several expired Memory Breads, finally retrieves a sleek silver-and-pink device:
+
+\noindent
+\textbf{The Neko-Inu Reversal Ray.}
+
+\noindent
+This prototype from the 22nd-century Department of Interspecies Relations fires a shimmering beam that rewrites the quantum species identifier in any animal's DNA: a snarling dog instantly transforms into a purring cat, and a graceful cat morphs into an energetic dog with a single zap.
+``With this,'' Doraemon declares, adjusting his bell, ``we can turn every dog in the neighbourhood into a cat! Nobita walks to school safely, the calico returns, and my circuits stop buzzing. Probably.''
+
+\noindent
+There is, however, a critical limitation that Doraemon, in his enthusiasm, almost neglects to mention.
+The Reversal Ray is an early prototype; its emitter can only sustain a beam for \textbf{one continuous sweep} per trigger pull.
+Doraemon must aim at some starting position along the fence, squeeze the trigger, and drag the beam across a \textbf{contiguous block} of animals before releasing.
+Every pet caught in the beam's path transforms simultaneously: dogs become cats, cats become dogs --- no exceptions, no selective targeting.
+Animals outside the sweep remain unchanged.
+Worse still, the ray's energy cartridge holds a finite charge.
+Once depleted, the gadget is nothing more than an expensive paperweight.
+Doraemon must therefore accomplish the full transformation using as \textbf{few shots as possible}.
+
+\noindent
+It so happens that behind Nobita's house, along the riverbank, runs a long wooden fence.
+Exactly $n$ pets sit perched there in a neat row, each one either a dog or a cat.
+Doraemon, with his robotic vision, scans their arrangement in an instant, encoding it as a binary string where \fonttt{0} represents a dog and \fonttt{1} represents a cat.
+Nobita, meanwhile, has drawn up his ideal arrangement on a crumpled sheet of paper --- another binary string of length $n$ --- marking exactly which fence posts should host friendly cats and which, regrettably, must still hold dogs (one cannot simply eliminate all dogs; that would upset the ecological balance, as Doraemon solemnly notes).
+
+\noindent
+Formally: you are given two strings $A$ and $B$, each of length $n$, composed of the characters \fonttt{0} (dog) and \fonttt{1} (cat).
+In a single operation, you may choose any contiguous substring $A[\ell \ldots r]$ (with $1 \le \ell \le r \le n$) and flip every bit within it --- \fonttt{0} becomes \fonttt{1}, \fonttt{1} becomes \fonttt{0}.
+Characters outside the chosen segment stay as they are.
+You may perform any number of operations, including zero.
+The goal is to make $A$ identical to $B$, minimizing the total number of operations used.
+
+\noindent
+Help Doraemon compute this minimum. Nobita's tear-streaked face --- and Doraemon's frazzled circuits --- depend on you.
 
 \InputFile
 
 \noindent
-The first line of input contains an integer $n$ ($1 \le n \le 10^6$).\\
-The second line contains the bitstring $A$ ($|A| = n$).\\
-The third line contains the bitstring $B$ ($|B| = n$). 
+The first line of input contains a single integer $n$ ($1 \le n \le 10^6$), the number of pets on the fence.\\
+The second line contains the string $A$ ($|A| = n$), the current arrangement (\fonttt{0} = dog, \fonttt{1} = cat).\\
+The third line contains the string $B$ ($|B| = n$), Nobita's desired arrangement.
 
 \OutputFile
 
 \noindent
-Output the minimum number of operations required to transform $A$ into $B$.
+Output a single integer: the minimum number of Reversal Ray shots required to transform $A$ into $B$.
 
 \Examples
 
