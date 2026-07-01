@@ -11,5 +11,5 @@
 | E     | Expected Tree       | Medium              | Math, Tree                           | Pasin Pornsiwakul        |
 | F     | Fixing Table        | Medium              | Dynamic Programming, Data Structures | Attitarn Buathep         |
 | G     | Gathering           | Easy                | Dynamic Programming                  | Paponthanai Ounsopa      |
-| H     |                     | Medium              |
+| H     | Harvest             | Medium              | Min‑plus Matrix + Segment Tree       | Paponthanai Ounsopa      |
 | I     | Irritating Transfer | Medium              | Graph, Number Theory                 | Borworntat Dendumrongkul |
