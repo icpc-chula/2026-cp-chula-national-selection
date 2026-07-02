@@ -46,5 +46,6 @@ Output a single integer, the minimum total time (in milliseconds) required for t
   5
 }
 \end{example}
+\Explaination{\upshape\normalsize The packet starts at server $1$ with encoding $K = 3$. Channel $(1, 4)$ has latency $5$, and since $\gcd(3, 5) = 1$, the packet can be sent through it directly, reaching server $4$ after $5$ ms (its encoding becomes $3 + 5 = 8$). Any route through servers $2$ and $3$ is slower: for example, $1 \to 2 \to 3$ arrives at server $3$ with encoding $8$ at time $5$, but $\gcd(8, 4) = 4$ blocks channel $(3, 4)$, forcing a re-encoding to $9$ before the final hop. Hence the minimum total time is $5$.}
 
 \end{problem}
