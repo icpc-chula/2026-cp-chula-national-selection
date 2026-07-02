@@ -35,11 +35,10 @@
     BoldFont={Helvetica Neue Medium} % Or simply {Helvetica Medium} depending on your system OS
   ]
 }{
-  % If falling back to TeX Gyre Heros, use its built-in Medium weight variant
-  \setsansfont{TeX Gyre Heros}[
-    BoldFont={* Medium},
-    BoldItalicFont={* Medium Italic}
-  ]
+  % Fall back to TeX Gyre Heros. It ships no "Medium" weight (only
+  % Regular/Bold/Italic/BoldItalic), so let fontspec auto-detect the bold
+  % faces instead of requesting a nonexistent "* Medium".
+  \setsansfont{TeX Gyre Heros}
 }
 \pagestyle{fancy}
 \fancyhf{}
