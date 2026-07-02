@@ -23,7 +23,7 @@ procedure QueryTypeII(S):
 \end{verbatim}
 
 \noindent
-Specifically, when a Type II query is made, the algorithm first sorts the given nodes $S = \{u_1, u_2, \dots, u_k\}$ by their depth (their distance from the secret root), such that $S[1]$ has the smallest depth and $S[n]$ has the greatest depth. It then performs the flip operation on every node in the sorted list \textit{except} the one with the greatest depth. If there are multiple nodes tied for the greatest depth, their order in the sorted list is chosen uniformly at random, and the one placed at the very end ($S[n]$) is omitted from the flips.
+Specifically, when a Type II query is made, the algorithm first sorts the given nodes $S = \{u_1, u_2, \dots, u_k\}$ by their depth (their distance from the secret root), such that $S[1]$ has the smallest depth and $S[n]$ has the greatest depth. It then performs the flip operation on the path from the secret root toevery node in the sorted list \textit{except} the one with the greatest depth. If there are multiple nodes tied for the greatest depth, their order in the sorted list is chosen uniformly at random, and the one placed at the very end ($S[n]$) is omitted from the flips.
 
 \noindent
 Your task is to write a program that helps Nobita find the secret root of the tree using at most \textbf{850} total queries.
@@ -50,7 +50,7 @@ If you make more than 850 queries, or if you make an invalid query, your program
 \textit{Notes on interactive judging:}
 \begin{itemize}
   \item \textit{The secret root and the initial colors of the nodes are fixed in advance. The grader is NOT adaptive.}
-  \item \textit{Do not forget to flush output buffers after writing. See the “Judging Details” document for details.}
+  \item \textit{Do not forget to flush output buffers after writing.}
 \end{itemize}
 
 \vspace{5mm}
