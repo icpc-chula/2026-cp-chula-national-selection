@@ -1,97 +1,92 @@
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
+using namespace std;
 
-struct fenwick_tree {
-  int n;
-  std::vector<long long> t;
+const int MX = 1e5 + 3;
+vector<int> adj[MX];
+int mark[MX], sz[MX];
 
-  fenwick_tree(int _n):
-    n(_n), t(n + 1, 0ll) {}
-
-  void update(int idx, long long v) {
-    for(; idx<=n; idx+=idx&-idx) {
-      t[idx] += v;
-    }
-  }
-
-  long long query(int idx) {
-    long long res = 0ll;
-    for(; idx>0; idx-=idx&-idx) {
-      res += t[idx];
-    }
-    return res;
-  }
-
-  long long query(int l, int r) {
-    if(l > r) {
-      return 0ll;
-    }
-    return query(r) - query(l-1);
-  }
-};
-
-inline long long sum_range(int l, int r, std::vector<long long> &pref) {
-  return pref[r + 1] - pref[l];
+int ask(int u) {
+  /* query type I
+     u: node number
+     return the hidden color for node u
+  */
+  cout << "? 1 " << u << '\n'; cout.flush();
+  int x; cin >> x;
+  return x; 
 }
 
-int main(int argc, char *argv[]) {
-  std::cin.tie(nullptr)->std::ios_base::sync_with_stdio(false);
+void flip(vector<int> v) {
+  /* query type II
+     v: vector of node number
+     for every node u in V/{deepest node from root}, flip the color of every node in the path from root to u.
+  */
+  cout << "? 2 " << v.size() << " ";
+  for (auto u : v) cout << u << " ";
+  cout << '\n'; cout.flush();
+  int x; cin >> x; assert(x == 1);
+}
+
+int fill_sz(int u, int prt=0) {
+  sz[u] = 1;
+  for (auto v : adj[u])
+    if (v != prt && !mark[v]) 
+      sz[u] += fill_sz(v, u);
+  return sz[u];
+}
+
+int centroid(int u, int n, int prt=0) {
+  for (auto v : adj[u])
+    if (v != prt && !mark[v] && 2*sz[v] > n) return centroid(v, n, u);
+  return u;
+}
+
+int find_par(int u) {
+  assert(!mark[u]);
+  vector<int> q;
+  for (auto v : adj[u]) if (!mark[v]) q.push_back(v);
+  q.push_back(u);
   
-  int n, k;
-  std::cin >> n >> k;
-  std::vector<int> a(n);
-  for(auto &x: a) {
-    std::cin >> x;
-  }
+  int l = 0, r = q.size()-1;
+  while (l < r) {
+    int mid = (l+r)>>1;
 
-  std::vector<long long> l_inv(n, 0ll), r_inv(n, 0ll);
-  long long all_inversion = 0ll;
-
-  fenwick_tree l_fw(n);
-  for(int i=0; i<n; ++i) {
-    l_inv[i] = l_fw.query(a[i] + 1, n);
-    all_inversion += l_inv[i];
-    l_fw.update(a[i], 1);
-  }
-
-  fenwick_tree r_fw(n);
-  for(int i=n-1; i>=0; --i) {
-    r_inv[i] = r_fw.query(a[i] - 1);
-    r_fw.update(a[i], 1);
-  }
-
-  std::vector<long long> pref_inv(n + 1, 0);
-  for(int i=0; i<n; ++i) {
-    pref_inv[i + 1] = pref_inv[i] + l_inv[i] + r_inv[i];
-  }
-
-  fenwick_tree window(n);
-  long long window_inv = 0ll;
-  for(int i=0; i<k; ++i) {
-    window_inv += window.query(a[i + 1], n);
-    window.update(a[i], 1);
-  }
-
-  long long max_cost = sum_range(0, k - 1, pref_inv) - window_inv;
-  int ways = 1;
-  for(int l=1; l<=n-k; ++l) {
-    window_inv -= window.query(a[l - 1] - 1);
-    window.update(a[l - 1], -1);
-    
-    window_inv += window.query(a[l + k - 1] + 1, n);
-    window.update(a[l + k - 1], 1);
-
-    long long current_cost = sum_range(l, l + k - 1, pref_inv) - window_inv;
-
-    if(current_cost > max_cost) {
-      max_cost = current_cost;
-      ways = 1;
+    if (mid == 0) {
+      int color = ask(q[0]);
+      flip({q[0], q[1]});
+      return ask(q[0]) == color ? q[1] : q[0];
     }
-    else if(current_cost == max_cost) {
-      ways++;
-    }
-  }
 
-  std::cout << all_inversion - max_cost << " " << ways << "\n";
-  return 0;
+    vector<int> v;
+    for (int i = 0; i <= mid; ++i) v.push_back(q[i]);
+    int color = ask(u);
+    flip(v);
+    if ((ask(u) + color) % 2 == v.size() % 2) r = mid;
+    else l = mid+1;  
+  }
+  return q[l];
+}
+
+void solve() {
+  int n; cin >> n;
+  for (int i = 1; i < n; ++i) {
+    int u, v; cin >> u >> v;
+    adj[u].emplace_back(v);
+    adj[v].emplace_back(u);
+  }
+  
+  int root = 1, c = 0;
+  do {
+    int m = fill_sz(root);
+    c = centroid(root, m);
+    int p = find_par(c);
+    mark[c] = 1; root = p;
+  } while (c != root);
+
+  cout << "! " << root << '\n';
+  cout.flush();
+}
+
+signed main() {
+  // ios_base::sync_with_stdio(0); cin.tie(NULL);
+  solve();
 }
